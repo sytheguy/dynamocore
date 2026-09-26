@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources = {"indEvents": "assets/img/indEvents.webp", "indHotel": "assets/img/indHotel.webp", "indRetail": "assets/img/indRetail.webp", "indRest": "assets/img/indRest.webp", "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/vendor/react.production.min.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/vendor/react-dom.production.min.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamo Core — POS devices for banks, payment companies and merchants</title>
+<link rel="preload" href="assets/models/dynamo-pos.glb" as="fetch" type="model/gltf-binary" crossorigin>
+<script type="module" src="assets/js/hero-3d.js"></script>
+<script src="assets/vendor/dc-runtime.js"></script>
+
+
+
+
+</head>
+<body>
+
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/58a148c5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/12dfd8f3.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/75d4c340.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/fe9eb45f.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/c3a5a8f8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/58a148c5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/12dfd8f3.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/75d4c340.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/fe9eb45f.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/c3a5a8f8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/58a148c5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/12dfd8f3.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/75d4c340.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/fe9eb45f.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/c3a5a8f8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/58a148c5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/12dfd8f3.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/75d4c340.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/fe9eb45f.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/c3a5a8f8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/fc69195f.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/3029b1e6.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* symbols2 */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/86148221.woff2") format('woff2');
+  unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/a435b4e7.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/03ffb6bb.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/8bc031ee.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/fc69195f.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/3029b1e6.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* symbols2 */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/86148221.woff2") format('woff2');
+  unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/a435b4e7.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/03ffb6bb.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/8bc031ee.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:#0E130C;color:#F1F4EC;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#B9E08F;text-decoration:none}
+a:hover{color:#D6F0BA}
+input,select,textarea,button{font-family:inherit}
+select option{color:#151714}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;padding-bottom:{{ bottomPad }};background:radial-gradient(ellipse 70% 50% at 15% 0%, #25421A 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 100% 45%, #1B3313 0%, transparent 70%), #0E130C">
+
+<header data-screen-label="Header" style="position:sticky;top:0;z-index:50;background:rgba(14,19,12,0.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(185,224,143,0.12)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 20px;height:{{ headerH }};display:flex;align-items:center;justify-content:space-between;gap:24px;transition:height .2s">
+    <a href="#top" style="display:flex;align-items:center"><img src="assets/img/394c3356.svg" alt="Dynamo Core" style="height:40px;width:auto;display:block;margin-left:-8px"></a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:32px;font-size:15px;font-weight:500">
+        <a href="#what" style="color:#DCE2D6" style-hover="color:#B9E08F">POS Devices</a>
+        <a href="#work" style="color:#DCE2D6" style-hover="color:#B9E08F">Web Development</a>
+        <a href="#about" style="color:#DCE2D6" style-hover="color:#B9E08F">About</a>
+        <a href="#contact" style="color:#DCE2D6" style-hover="color:#B9E08F">Contact</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:18px">
+        <a href="{{ waGeneral }}" target="_blank" style="font-size:15px;font-weight:500;color:#B9E08F;white-space:nowrap;display:flex;align-items:center;gap:8px"><img src="assets/img/366c97bf.svg" alt="" aria-hidden="true" style="width:18px;height:18px;display:block;flex:0 0 auto">WhatsApp</a>
+        <button sc-camel-on-click="{{ openQuote }}" style="background:#A6D57F;color:#10180B;border:0;border-radius:10px;padding:11px 18px;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0" style-hover="background:#BDE69A">Get a Quote</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button sc-camel-on-click="{{ toggleMenu }}" aria-label="Menu" style="width:44px;height:44px;border:1px solid rgba(185,224,143,0.3);background:rgba(255,255,255,0.04);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
+        <span style="width:18px;height:2px;background:#F1F4EC;display:block"></span>
+        <span style="width:12px;height:2px;background:#F1F4EC;display:block;margin-left:6px"></span>
+      </button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div sc-camel-on-click="{{ closeMenu }}" aria-hidden="true" style="position:absolute;top:100%;left:0;right:0;height:100vh;background:rgba(5,8,4,0.55)"></div>
+    <nav style="position:absolute;top:100%;left:0;right:0;display:flex;flex-direction:column;padding:8px 20px 20px;background:rgba(14,19,12,0.97);border-top:1px solid rgba(185,224,143,0.12);border-bottom:1px solid rgba(185,224,143,0.18);box-shadow:0 24px 48px rgba(0,0,0,0.45);font-size:18px;font-weight:500">
+      <a href="#what" sc-camel-on-click="{{ closeMenu }}" style="color:#F1F4EC;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07)">POS Devices</a>
+      <a href="#work" sc-camel-on-click="{{ closeMenu }}" style="color:#F1F4EC;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07)">Web Development</a>
+      <a href="#about" sc-camel-on-click="{{ closeMenu }}" style="color:#F1F4EC;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07)">About</a>
+      <a href="#contact" sc-camel-on-click="{{ closeMenu }}" style="color:#F1F4EC;padding:14px 0">Contact</a>
+    </nav>
+  </sc-if>
+</header>
+
+<main id="top" style="flex:1">
+
+<section data-screen-label="Hero" style="max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,96px) 20px clamp(48px,6vw,80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,5vw,64px);align-items:center">
+  <div style="display:flex;flex-direction:column;gap:26px">
+    <h1 style="margin:0;font-size:clamp(42px,6.4vw,78px);line-height:1;letter-spacing:-0.04em;font-weight:700;text-wrap:balance">{{ headline }}</h1>
+    <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.55;color:#BAC3B2;max-width:32em;text-wrap:pretty">Dynamo Core supplies and supports handheld POS devices for banks, payment companies and merchants across Ghana, with delivery across Africa.</p>
+    <div style="display:flex;flex-wrap:nowrap;gap:clamp(8px,2.5vw,12px);margin-top:4px">
+      <button sc-camel-on-click="{{ openQuote }}" style="background:#A6D57F;color:#10180B;border:0;border-radius:10px;padding:15px clamp(8px,2.6vw,26px);font-size:clamp(13px,3.8vw,17px);font-weight:600;cursor:pointer;white-space:nowrap;flex:{{ btnFlex }};min-height:52px" style-hover="background:#BDE69A">Get a Quote</button>
+      <a href="{{ waGeneral }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:clamp(6px,2vw,10px);border:1px solid rgba(185,224,143,0.55);color:#D6F0BA;border-radius:10px;padding:15px clamp(8px,2.6vw,22px);font-size:clamp(13px,3.8vw,17px);font-weight:600;min-height:52px;white-space:nowrap;flex:{{ btnFlex }}" style-hover="background:rgba(185,224,143,0.08);color:#E6F5D6"><img src="assets/img/366c97bf.svg" alt="" aria-hidden="true" style="width:clamp(17px,4.6vw,20px);height:clamp(17px,4.6vw,20px);display:block;flex:0 0 auto">Chat on WhatsApp</a>
+    </div>
+  </div>
+  <div style="position:relative;min-height:clamp(520px,62vw,780px);margin-block:clamp(-60px,-4vw,0px)">
+    <div id="hero-3d" aria-label="Interactive 3D model of a Dynamo Core handheld POS terminal. Drag to rotate, tap to print a receipt." style="position:absolute;inset:0;background:radial-gradient(closest-side at 50% 54%, rgba(166,213,127,0.20) 0%, rgba(166,213,127,0.07) 55%, rgba(166,213,127,0) 100%)"></div>
+  </div>
+</section>
+
+<section data-screen-label="Trust strip" style="max-width:1240px;margin:0 auto;padding:0 20px;width:100%">
+  <div style="border-top:1px solid rgba(185,224,143,0.14);border-bottom:1px solid rgba(185,224,143,0.14);padding:28px 0;display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px">
+    <span style="font-size:14px;color:#BAC3B2;font-weight:500">Trusted by banks and payment companies</span>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;flex:1">
+      <div style="height:64px;padding:0 20px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(185,224,143,0.14);display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);background:rgba(255,255,255,0.1);border-color:rgba(185,224,143,0.4);box-shadow:0 12px 28px rgba(0,0,0,0.35)"><img src="assets/img/d0c55fae.png" alt="Bank of Africa" style="height:32px;width:auto;display:block"></div>
+      <div style="height:64px;padding:0 20px;border-radius:12px;background:#FFFFFF;display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35),0 0 0 2px rgba(166,213,127,0.6)"><img src="assets/img/5884d475.png" alt="Hubtel" style="height:28px;width:auto;display:block"></div>
+      <div style="height:64px;padding:0 20px;border-radius:12px;background:#FFFFFF;display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35),0 0 0 2px rgba(166,213,127,0.6)"><img src="assets/img/ebe9da90.png" alt="National Investment Bank" style="height:40px;width:auto;display:block"></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Numbers" style="max-width:1240px;margin:0 auto;padding:clamp(48px,6vw,80px) 20px;width:100%">
+  <div style="display:grid;grid-template-columns:{{ statCols }};gap:12px">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+      <div style="padding:clamp(18px,3vw,26px) clamp(16px,2.6vw,24px);display:flex;flex-direction:column;gap:8px;border-radius:22px;background:rgba(255,255,255,0.03);border:1px solid rgba(185,224,143,0.16)">
+        <span style="font-size:clamp(30px,4.6vw,54px);font-weight:700;letter-spacing:-0.04em;color:#B9E08F;line-height:1">{{ s.value }}</span>
+        <span style="font-size:clamp(14px,1.4vw,16px);line-height:1.4;color:#DCE2D6">{{ s.label }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="what" data-screen-label="What we do" style="max-width:1240px;margin:0 auto;padding:0 20px clamp(64px,8vw,112px);display:flex;flex-direction:column;align-items:center;gap:36px;width:100%">
+  <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);letter-spacing:-0.03em;line-height:1.1;font-weight:600">What we do</h2>
+  <div style="display:flex;flex-direction:column;gap:20px;width:100%">
+    <div style="margin-top:clamp(56px,9vw,120px);border-radius:36px;background:rgba(255,255,255,0.035);border:1px solid rgba(185,224,143,0.22);backdrop-filter:blur(10px);padding:clamp(20px,3vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(24px,4vw,56px);align-items:center">
+      <div style="position:relative;aspect-ratio:5/4;border-radius:24px;background:radial-gradient(ellipse 60% 55% at 50% 60%, rgba(166,213,127,0.32) 0%, rgba(166,213,127,0.08) 55%, transparent 75%)">
+        <img src="assets/img/835cd9a5.webp" alt="Handheld POS terminal with built-in receipt printer" style="position:absolute;left:50%;bottom:6%;height:128%;width:auto;display:block;transform:translateX(-50%) rotate(-8deg);transform-origin:50% 100%;filter:drop-shadow(0 40px 50px rgba(0,0,0,0.55)) drop-shadow(0 8px 14px rgba(0,0,0,0.35));transition:transform .45s cubic-bezier(.2,.8,.2,1)" style-hover="transform:translateX(-50%) rotate(-3deg) translateY(-12px) scale(1.03)">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding:8px 0">
+        <h3 style="margin:0;font-size:clamp(28px,3vw,38px);letter-spacing:-0.025em;font-weight:600">POS devices &amp; hardware</h3>
+        <p style="margin:0;font-size:18px;line-height:1.55;color:#BAC3B2;max-width:28em">Handheld POS terminals, printers and payment hardware, sourced worldwide and delivered to your door.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="border-radius:999px;background:rgba(166,213,127,0.14);border:1px solid rgba(166,213,127,0.35);color:#D6F0BA;padding:7px 14px;font-size:14px;font-weight:600">Z90</span>
+          <span style="border-radius:999px;background:rgba(166,213,127,0.14);border:1px solid rgba(166,213,127,0.35);color:#D6F0BA;padding:7px 14px;font-size:14px;font-weight:600">Urovo i9200</span>
+          <span style="border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(185,224,143,0.18);color:#DCE2D6;padding:7px 14px;font-size:14px;font-weight:500">Spare parts</span>
+          <span style="border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(185,224,143,0.18);color:#DCE2D6;padding:7px 14px;font-size:14px;font-weight:500">Other device types on request</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px">
+          <button sc-camel-on-click="{{ openQuote }}" style="border:1px solid #A6D57F;background:transparent;color:#D6F0BA;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer" style-hover="background:rgba(166,213,127,0.12);color:#E6F5D6">Check price &amp; availability</button>
+        </div>
+      </div>
+    </div>
+    <div id="work" style="scroll-margin-top:clamp(36px,5vw,72px);margin-top:clamp(80px,11vw,140px);border-radius:36px;background:rgba(255,255,255,0.035);border:1px solid rgba(185,224,143,0.22);backdrop-filter:blur(10px);padding:clamp(20px,3vw,36px);display:grid;grid-template-columns:{{ webCols }};gap:clamp(24px,4vw,56px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:16px;padding:8px 0 8px clamp(0px,2vw,20px);">
+        <h3 style="margin:0;font-size:clamp(28px,3vw,38px);letter-spacing:-0.025em;font-weight:600">Web development</h3>
+        <p style="margin:0;font-size:18px;line-height:1.55;color:#BAC3B2;max-width:28em">Websites, web apps, online stores and dashboards built for businesses that want to grow.</p>
+        <div style="display:flex;flex-direction:column;border-top:1px solid rgba(185,224,143,0.14);margin-top:4px">
+          <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:2px;padding:12px 0;border-bottom:1px solid rgba(185,224,143,0.14)">
+              <span style="font-size:16px;font-weight:600;color:#F1F4EC">{{ p.name }}</span>
+              <span style="font-size:14px;line-height:1.5;color:#BAC3B2">{{ p.desc }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px">
+          <button sc-camel-on-click="{{ openWeb }}" style="border:1px solid #A6D57F;background:transparent;color:#D6F0BA;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer" style-hover="background:rgba(166,213,127,0.12);color:#E6F5D6">Enquire about a project</button>
+        </div>
+      </div>
+      <div style="position:relative;align-self:start;order:{{ webTileOrder }};margin-top:{{ webTileMt }};aspect-ratio:5/4;border-radius:24px;background:radial-gradient(ellipse 60% 55% at 50% 55%, rgba(166,213,127,0.28) 0%, rgba(166,213,127,0.07) 55%, transparent 75%)">
+        <div style="position:absolute;left:-2%;top:-24%;width:84%;border-radius:12px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 60px rgba(0,0,0,0.5),0 8px 16px rgba(0,0,0,0.3);transform:rotate(-3deg);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;z-index:1" style-hover="transform:rotate(0deg) translateY(-10px) scale(1.03);box-shadow:0 40px 80px rgba(0,0,0,0.6),0 10px 20px rgba(0,0,0,0.35);z-index:3">
+          <div style="height:22px;background:#E9ECE6;display:flex;align-items:center;gap:6px;padding:0 10px"><span style="width:8px;height:8px;border-radius:50%;background:#C9CFC4;display:block"></span><span style="width:8px;height:8px;border-radius:50%;background:#C9CFC4;display:block"></span><span style="width:8px;height:8px;border-radius:50%;background:#C9CFC4;display:block"></span></div>
+          <img src="assets/img/957efb6c.webp" alt="Alliance Française Accra website" style="width:100%;height:auto;display:block">
+        </div>
+        <div style="position:absolute;right:-6%;bottom:2%;width:66%;border-radius:12px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 60px rgba(0,0,0,0.55),0 8px 16px rgba(0,0,0,0.35);transform:rotate(2deg);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;z-index:2" style-hover="transform:rotate(0deg) translateY(-10px) scale(1.03);box-shadow:0 40px 80px rgba(0,0,0,0.6),0 10px 20px rgba(0,0,0,0.4);z-index:3">
+          <div style="height:20px;background:#E9ECE6;display:flex;align-items:center;gap:6px;padding:0 10px"><span style="width:7px;height:7px;border-radius:50%;background:#C9CFC4;display:block"></span><span style="width:7px;height:7px;border-radius:50%;background:#C9CFC4;display:block"></span><span style="width:7px;height:7px;border-radius:50%;background:#C9CFC4;display:block"></span></div>
+          <img src="assets/img/85da05b5.webp" alt="EngageSpace web app" style="width:100%;height:auto;display:block">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Where devices work" style="max-width:1240px;margin:0 auto;padding:0 20px clamp(64px,8vw,112px);display:flex;flex-direction:column;align-items:center;gap:36px;width:100%">
+  <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);letter-spacing:-0.03em;line-height:1.1;font-weight:600;text-align:center;text-wrap:balance">Wherever you take payments</h2>
+  <div style="display:grid;grid-template-columns:{{ indCols }};gap:12px;width:100%">
+    <sc-for list="{{ industries }}" as="i" hint-placeholder-count="4">
+      <div style="border-radius:22px;background:rgba(255,255,255,0.03);border:1px solid rgba(185,224,143,0.16);padding:14px;display:flex;flex-direction:column;gap:14px">
+        <div style="aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:rgba(255,255,255,0.04)"><img src="{{ i.img }}" alt="{{ i.label }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.07)"></div>
+        <span style="font-size:17px;font-weight:600;padding:0 4px 4px">{{ i.label }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="about" data-screen-label="Why Dynamo Core" style="max-width:1240px;margin:0 auto;padding:0 20px clamp(64px,8vw,112px);width:100%;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,5vw,72px);align-items:stretch">
+    <div style="position:relative;min-height:clamp(380px,48vw,640px);border-radius:32px;overflow:hidden;background:rgba(255,255,255,0.04)">
+      <img src="assets/img/d388a62f.webp" alt="Customer paying by phone at a POS terminal" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 55%;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.05)">
+      <div style="position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top, rgba(10,15,8,0.85), transparent);pointer-events:none"></div>
+      <div style="position:absolute;left:clamp(16px,2.5vw,28px);bottom:clamp(16px,2.5vw,28px);right:clamp(16px,2.5vw,28px);display:flex;flex-direction:column;gap:4px;pointer-events:none">
+        <span style="font-size:clamp(36px,4vw,52px);font-weight:700;letter-spacing:-0.04em;color:#B9E08F;line-height:1">1,000+</span>
+        <span style="font-size:16px;color:#F1F4EC">merchants running on devices we supplied</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:28px;padding:8px 0">
+      <h2 style="margin:0;font-size:clamp(32px,4vw,50px);letter-spacing:-0.035em;line-height:1.05;font-weight:600;text-wrap:balance">Why Dynamo Core</h2>
+      <div style="display:flex;flex-direction:column;border-top:1px solid rgba(185,224,143,0.16)">
+        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="4">
+          <div style="display:flex;gap:18px;align-items:flex-start;padding:22px 12px;margin:0 -12px;border-bottom:1px solid rgba(185,224,143,0.16);border-radius:14px;transition:background .3s" style-hover="background:rgba(166,213,127,0.06)">
+            <span style="width:44px;height:44px;border-radius:12px;background:rgba(166,213,127,0.14);border:1px solid rgba(166,213,127,0.3);display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+              <svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#B9E08F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ r.icon }}"></path></svg>
+            </span>
+            <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+              <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-0.01em">{{ r.title }}</h3>
+              <p style="margin:0;font-size:16px;line-height:1.55;color:#BAC3B2;text-wrap:pretty">{{ r.body }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="Final CTA" style="max-width:1240px;margin:0 auto;padding:{{ ctaPadTop }} 20px clamp(64px,8vw,112px);width:100%">
+  <div style="position:relative;border-radius:36px;background:radial-gradient(ellipse 70% 120% at 0% 0%, #3A6326 0%, #1C3212 60%);border:1px solid rgba(185,224,143,0.3);padding:clamp(32px,5vw,72px) clamp(20px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,48px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px;position:relative;z-index:1">
+      <h2 style="margin:0;font-size:clamp(36px,5vw,64px);letter-spacing:-0.04em;line-height:1;font-weight:700;text-wrap:balance">Ready to equip your business?</h2>
+      <p style="margin:0;font-size:18px;line-height:1.55;color:#D6F0BA;max-width:26em;text-wrap:pretty">Tell us what you need. We reply within 1 business day, or right away on WhatsApp.</p>
+      <div style="display:flex;flex-wrap:nowrap;gap:clamp(8px,2.5vw,12px);margin-top:8px">
+        <button sc-camel-on-click="{{ openQuote }}" style="background:#A6D57F;color:#10180B;border:0;border-radius:10px;padding:15px clamp(8px,2.6vw,26px);font-size:clamp(13px,3.8vw,17px);font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap;flex:{{ btnFlex }};min-height:52px;transition:transform .25s,background .25s" style-hover="background:#BDE69A;transform:translateY(-2px)">Get a Quote</button>
+        <a href="{{ waGeneral }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:clamp(6px,2vw,10px);border:1px solid rgba(214,240,186,0.6);color:#E6F5D6;border-radius:10px;padding:15px clamp(8px,2.6vw,22px);font-size:clamp(13px,3.8vw,17px);font-weight:600;min-height:52px;white-space:nowrap;flex:{{ btnFlex }};transition:transform .25s,background .25s" style-hover="background:rgba(255,255,255,0.08);color:#fff;transform:translateY(-2px)"><img src="assets/img/366c97bf.svg" alt="" aria-hidden="true" style="width:clamp(17px,4.6vw,20px);height:clamp(17px,4.6vw,20px);display:block;flex:0 0 auto">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div style="position:relative;height:{{ ctaDevH }};align-self:stretch;order:{{ ctaDevOrder }};margin:{{ ctaDevMargin }}">
+      <div style="position:absolute;left:50%;top:50%;width:70%;height:70%;transform:translate(-50%,-40%);background:radial-gradient(ellipse at center, rgba(166,213,127,0.35) 0%, transparent 70%);pointer-events:none"></div>
+      <img src="assets/img/8c055e7b.webp" alt="Three handheld POS terminals" style="position:absolute;left:50%;bottom:{{ ctaImgBottom }};height:150%;width:auto;max-width:none;display:block;transform:translateX(-50%) rotate(-3deg);transform-origin:50% 100%;filter:drop-shadow(0 40px 50px rgba(0,0,0,0.55)) drop-shadow(0 8px 14px rgba(0,0,0,0.35));transition:transform .45s cubic-bezier(.2,.8,.2,1)" style-hover="transform:translateX(-50%) rotate(0deg) translateY(-12px) scale(1.03)">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer data-screen-label="Footer" style="border-top:1px solid rgba(185,224,143,0.14);background:rgba(0,0,0,0.25)">
+  <div style="max-width:1240px;margin:0 auto;padding:{{ footPad }};display:grid;grid-template-columns:{{ footCols }};gap:{{ footGap }}">
+    <div style="display:flex;flex-direction:column;gap:14px;grid-column:{{ footBrandSpan }}">
+      <img src="assets/img/394c3356.svg" alt="Dynamo Core" style="height:44px;width:auto;align-self:flex-start;margin-left:-8px">
+      <p style="margin:0;font-size:15px;line-height:1.5;color:#BAC3B2;max-width:22em">POS devices and web development for businesses in Ghana and across Africa.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#8F9A87;margin-bottom:4px">Pages</span>
+      <a href="#what" style="color:#DCE2D6">POS Devices</a>
+      <a href="#work" style="color:#DCE2D6">Web Development</a>
+      <a href="#about" style="color:#DCE2D6">About</a>
+      <a href="#contact" style="color:#DCE2D6">Contact</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#8F9A87;margin-bottom:4px">Contact</span>
+      <a href="tel:+233506725726" style="color:#DCE2D6">+233 50 672 5726</a>
+      <a href="{{ waGeneral }}" target="_blank" style="color:#B9E08F">Chat on WhatsApp</a>
+      <span style="color:#DCE2D6">Adenta, Accra, Ghana</span>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:0 auto;padding:20px;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:#8F9A87">
+    <span>© 2026 Dynamo Core</span>
+    <div style="display:flex;gap:20px"><a href="Privacy.dc.html" style="color:#BAC3B2">Privacy</a><a href="Terms.dc.html" style="color:#BAC3B2">Terms</a></div>
+  </div>
+</footer>
+
+<a href="{{ waGeneral }}" target="_blank" aria-label="Chat on WhatsApp" style="position:fixed;right:16px;bottom:{{ fabBottom }};z-index:45;background:#25D366;color:#06210F;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.4)" style-hover="background:#3BE07A;color:#06210F"><img src="assets/img/a452d2c3.svg" alt="" aria-hidden="true" style="width:28px;height:28px;display:block;flex:0 0 auto"></a>
+
+<sc-if value="{{ quoteOpen }}" hint-placeholder-val="{{ false }}">
+  <div sc-camel-on-click="{{ closeQuote }}" style="position:fixed;inset:0;z-index:60;background:rgba(5,8,4,0.7);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:clamp(0px,4vw,48px) clamp(0px,3vw,24px)">
+    <div sc-camel-on-click="{{ stop }}" role="dialog" aria-label="Request a quote" style="background:#172014;border:1px solid rgba(185,224,143,0.25);width:100%;max-width:640px;border-radius:28px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <h2 style="margin:0;font-size:28px;letter-spacing:-0.02em;font-weight:600">{{ modalTitle }}</h2>
+          <p style="margin:0;font-size:15px;color:#BAC3B2">Tell us what you need and we'll get back to you.</p>
+        </div>
+        <button sc-camel-on-click="{{ closeQuote }}" aria-label="Close" style="width:44px;height:44px;flex:0 0 auto;border:1px solid rgba(185,224,143,0.3);background:transparent;color:#F1F4EC;border-radius:10px;font-size:20px;cursor:pointer">×</button>
+      </div>
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="background:rgba(166,213,127,0.12);border:1px solid rgba(166,213,127,0.35);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;font-size:17px;line-height:1.5;color:#E6F5D6">Thanks, we've received your request. We'll reach out within 1 business day. Need us sooner? <a href="{{ waGeneral }}" target="_blank" style="font-weight:600;text-decoration:underline">Chat on WhatsApp</a>.</p>
+          <button sc-camel-on-click="{{ closeQuote }}" style="align-self:flex-start;background:#A6D57F;color:#10180B;border:0;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0">Done</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <form sc-camel-on-submit="{{ submit }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6;grid-column:1/-1">Request type *
+            <sc-raw-select value="{{ reqType }}" sc-camel-on-change="{{ setReqType }}" required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
+              <option>POS devices &amp; hardware</option><option>Web development</option>
+            </sc-raw-select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Full name *<input required="required" autocomplete="name" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Company / business name *<input required="required" autocomplete="organization" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <sc-if value="{{ isPosReq }}" hint-placeholder-val="{{ true }}">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Business type *
+            <sc-raw-select required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
+              <option value="">Select…</option><option>Bank</option><option>Payment company or fintech</option><option>Retail</option><option>Restaurant or bar</option><option>Hotel</option><option>Events</option><option>Other</option>
+            </sc-raw-select>
+          </label>
+          </sc-if>
+          <sc-if value="{{ isPosReq }}" hint-placeholder-val="{{ true }}">
+            <div style="display:contents">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Number of devices *
+              <sc-raw-select required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
+                <option value="">Select…</option><option>1–2</option><option>3–10</option><option>11–50</option><option>50+</option>
+              </sc-raw-select>
+            </label>
+            </div>
+          </sc-if>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Phone (WhatsApp) *<input type="tel" required="required" placeholder="+233 ..." autocomplete="tel" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Email *<input type="email" required="required" autocomplete="email" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Country *<input required="required" sc-camel-default-value="Ghana" autocomplete="country-name" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <sc-if value="{{ isPosReq }}" hint-placeholder-val="{{ true }}">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Device(s) of interest<input placeholder="e.g. Z90, receipt printer" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          </sc-if>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6;grid-column:1/-1">Message<textarea rows="4" placeholder="{{ msgPlaceholder }}" style="border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC;resize:vertical"></textarea></label>
+          <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+          <button type="submit" style="grid-column:1/-1;background:#A6D57F;color:#10180B;border:0;border-radius:10px;height:52px;font-size:17px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0" style-hover="background:#BDE69A">Send request</button>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],&quot;default&quot;:&quot;A&quot;,&quot;tsType&quot;:&quot;'A'|'B'|'C'&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, scrolled: false, menuOpen: false, quoteOpen: false, reqType: 'POS devices & hardware', submitted: false };
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    this.onScroll = () => { const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+  }
+  renderVals() {
+    const heads = {
+      A: 'POS devices your business can count on.',
+      B: 'Reliable POS terminals for banks, payment companies and merchants.',
+      C: "Get paid anywhere. We'll supply the device."
+    };
+    const isMobile = this.state.w < 1100;
+    const wa = 'https://wa.me/233506725726?text=' + encodeURIComponent("Hi Dynamo Core, I'd like to find out more about your services.");
+    const open = (t) => this.setState({ quoteOpen: true, submitted: false, menuOpen: false, reqType: t });
+    return {
+      headline: heads[this.props.headline ?? 'A'] || heads.A,
+      isMobile, isDesktop: !isMobile,
+      headerH: isMobile || this.state.scrolled ? '64px' : '80px',
+      bottomPad: '0px',
+      fabBottom: isMobile ? 'calc(16px + env(safe-area-inset-bottom))' : '24px',
+      menuOpen: isMobile && this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      waGeneral: wa,
+      clients: ['Bank of Africa', 'Hubtel', 'National Investment Bank'],
+      stats: [
+        { value: '1,000+', label: 'merchants' },
+        { value: '14 of 16', label: 'regions in Ghana, with delivery across Africa' },
+        { value: '8+', label: 'device partners' },
+        { value: '6-month', label: 'warranty' }
+      ],
+      industries: [
+        { label: 'Restaurants & bars', img: (window.__resources && window.__resources.indRest) || 'https://images.unsplash.com/photo-1674216645383-afc4e42c227f?auto=format&fit=crop&w=800&h=800&q=70' },
+        { label: 'Hotels', img: (window.__resources && window.__resources.indHotel) || 'https://images.unsplash.com/photo-1759038086832-795644825e3a?auto=format&fit=crop&w=800&h=800&q=70' },
+        { label: 'Retail shops', img: (window.__resources && window.__resources.indRetail) || 'https://images.unsplash.com/photo-1753161027547-975af3d6e707?auto=format&fit=crop&w=800&h=800&q=70' },
+        { label: 'Events', img: (window.__resources && window.__resources.indEvents) || 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=800&h=800&q=70' }
+      ],
+      reasons: [
+        { n: '01', icon: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-4.35-4.35', title: 'Any device, sourced for you.', body: "We are not tied to one brand. Tell us what you need and we'll find it." },
+        { n: '02', icon: 'M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3', title: 'Ready to use.', body: 'Devices arrive set up and ready to go. Load your own payment software, or ask us to do it for you.' },
+        { n: '03', icon: 'M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 20l1.1-4.2A8.4 8.4 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z', title: 'Support after the sale.', body: '6-month warranty, repairs and a team you can reach on WhatsApp.' },
+        { n: '04', icon: 'M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5', title: 'One device or one thousand.', body: 'No minimum order. We handle single merchants and bulk rollouts alike.' }
+      ],
+      projects: [
+        { name: 'Alliance Française Accra', desc: 'Website redesign for a cultural institution', tags: 'Website', img: 'assets/work-alliance-francaise-v3.png' },
+        { name: 'EngageSpace', desc: 'Live audience engagement platform for events and presentations', tags: 'Web app', img: 'assets/work-engagespace-v3.png' },
+        { name: 'Swift Imports', desc: 'Shipment tracking dashboard for an import business', tags: 'Web app', img: 'assets/work-swift-imports-v3.png' }
+      ],
+      quoteOpen: this.state.quoteOpen,
+      modalTitle: this.state.reqType === 'Web development' ? 'Tell us about your project' : 'Request a quote',
+      openQuote: () => open('POS devices & hardware'),
+      openWeb: () => open('Web development'),
+      closeQuote: () => this.setState({ quoteOpen: false }),
+      stop: (e) => e.stopPropagation(),
+      reqType: this.state.reqType,
+      webCols: this.state.w >= 900 ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      webTileOrder: this.state.w >= 900 ? '0' : '-1',
+      webTileMt: '0px',
+      indCols: this.state.w >= 760 ? 'repeat(4,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))',
+      btnFlex: this.state.w < 640 ? '1 1 auto' : '0 0 auto',
+      statCols: this.state.w >= 900 ? 'repeat(4,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))',
+      footCols: this.state.w >= 760 ? 'repeat(3,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))',
+      footBrandSpan: this.state.w >= 760 ? 'auto' : '1 / -1',
+      footGap: this.state.w >= 760 ? '40px' : '28px 20px',
+      footPad: this.state.w >= 760 ? '56px 20px 32px' : '40px 20px 28px',
+      // Final CTA: stacked (single-column) layouts show the devices above the heading, breaking out of the card.
+      ctaPadTop: this.state.w < 860 ? '150px' : 'clamp(40px,6vw,80px)',
+      ctaDevH: this.state.w < 860 ? '210px' : 'clamp(220px,26vw,300px)',
+      ctaDevOrder: this.state.w < 860 ? '-1' : '0',
+      ctaDevMargin: this.state.w < 860 ? '-110px 0 -8px' : '0',
+      ctaImgBottom: this.state.w < 860 ? '-4%' : '-10%',
+      isWebReq: this.state.reqType === 'Web development',
+      msgPlaceholder: this.state.reqType === 'Web development' ? 'What should the site or app do? Any examples you like?' : '',
+      isPosReq: this.state.reqType !== 'Web development',
+      setReqType: (e) => this.setState({ reqType: e.target.value }),
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      submit: (e) => { e.preventDefault(); if (e.target.website && e.target.website.value) return; this.setState({ submitted: true }); }
+    };
+  }
+}
+</script>
+
+
+</body></html>

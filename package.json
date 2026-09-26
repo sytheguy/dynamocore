@@ -1,0 +1,12 @@
+{
+  "name": "dynamo-core-website",
+  "private": true,
+  "scripts": {
+    "build:3d": "esbuild src/hero-3d.js --bundle --minify --format=esm --target=es2020 --outfile=website/assets/js/hero-3d.js",
+    "serve": "python3 -m http.server 8080 --directory website"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "three": "0.186.1"
+  }
+}
