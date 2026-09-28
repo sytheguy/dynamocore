@@ -543,22 +543,26 @@ select option{color:#151714}
       </div>
       <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
         <div style="background:rgba(166,213,127,0.12);border:1px solid rgba(166,213,127,0.35);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px">
-          <p style="margin:0;font-size:17px;line-height:1.5;color:#E6F5D6">Thanks, we've received your request. We'll reach out within 1 business day. Need us sooner? <a href="{{ waGeneral }}" target="_blank" style="font-weight:600;text-decoration:underline">Chat on WhatsApp</a>.</p>
-          <button sc-camel-on-click="{{ closeQuote }}" style="align-self:flex-start;background:#A6D57F;color:#10180B;border:0;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0">Done</button>
+          <p style="margin:0;font-size:17px;line-height:1.5;color:#E6F5D6">Thanks, we've received your request. We'll reach out within 1 business day.</p>
+          <p style="margin:0;font-size:15px;line-height:1.5;color:#BAC3B2">Need a faster reply? Send the same details to us on WhatsApp.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <a href="{{ waLead }}" target="_blank" style="display:flex;align-items:center;gap:8px;background:#25D366;color:#06210F;border-radius:10px;padding:12px 18px;font-size:15px;font-weight:600;white-space:nowrap" style-hover="background:#3BE07A"><img src="assets/img/a452d2c3.svg" alt="" aria-hidden="true" style="width:18px;height:18px;display:block;flex:0 0 auto">Also send on WhatsApp</a>
+          <button sc-camel-on-click="{{ closeQuote }}" style="background:#A6D57F;color:#10180B;border:0;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0">Done</button>
+          </div>
         </div>
       </sc-if>
       <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
         <form sc-camel-on-submit="{{ submit }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
           <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6;grid-column:1/-1">Request type *
-            <sc-raw-select value="{{ reqType }}" sc-camel-on-change="{{ setReqType }}" required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
+            <sc-raw-select name="Request type" value="{{ reqType }}" sc-camel-on-change="{{ setReqType }}" required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
               <option>POS devices &amp; hardware</option><option>Web development</option>
             </sc-raw-select>
           </label>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Full name *<input required="required" autocomplete="name" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Company / business name *<input required="required" autocomplete="organization" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Full name *<input name="Full name" required="required" autocomplete="name" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Company / business name *<input name="Company" required="required" autocomplete="organization" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
           <sc-if value="{{ isPosReq }}" hint-placeholder-val="{{ true }}">
           <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Business type *
-            <sc-raw-select required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
+            <sc-raw-select name="Business type" required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
               <option value="">Select…</option><option>Bank</option><option>Payment company or fintech</option><option>Retail</option><option>Restaurant or bar</option><option>Hotel</option><option>Events</option><option>Other</option>
             </sc-raw-select>
           </label>
@@ -566,21 +570,24 @@ select option{color:#151714}
           <sc-if value="{{ isPosReq }}" hint-placeholder-val="{{ true }}">
             <div style="display:contents">
             <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Number of devices *
-              <sc-raw-select required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
+              <sc-raw-select name="Number of devices" required="required" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC">
                 <option value="">Select…</option><option>1–2</option><option>3–10</option><option>11–50</option><option>50+</option>
               </sc-raw-select>
             </label>
             </div>
           </sc-if>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Phone (WhatsApp) *<input type="tel" required="required" placeholder="+233 ..." autocomplete="tel" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Email *<input type="email" required="required" autocomplete="email" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Country *<input required="required" sc-camel-default-value="Ghana" autocomplete="country-name" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Phone (WhatsApp) *<input name="Phone (WhatsApp)" type="tel" required="required" placeholder="+233 ..." autocomplete="tel" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Email *<input name="email" type="email" required="required" autocomplete="email" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Country *<input name="Country" required="required" sc-camel-default-value="Ghana" autocomplete="country-name" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
           <sc-if value="{{ isPosReq }}" hint-placeholder-val="{{ true }}">
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Device(s) of interest<input placeholder="e.g. Z90, receipt printer" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6">Device(s) of interest<input name="Device(s) of interest" placeholder="e.g. Z90, receipt printer" style="height:48px;border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:0 12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC"></label>
           </sc-if>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6;grid-column:1/-1">Message<textarea rows="4" placeholder="{{ msgPlaceholder }}" style="border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC;resize:vertical"></textarea></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:#DCE2D6;grid-column:1/-1">Message<textarea name="Message" rows="4" placeholder="{{ msgPlaceholder }}" style="border:1px solid rgba(185,224,143,0.28);border-radius:10px;padding:12px;font-size:16px;background:rgba(255,255,255,0.04);color:#F1F4EC;resize:vertical"></textarea></label>
           <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
-          <button type="submit" style="grid-column:1/-1;background:#A6D57F;color:#10180B;border:0;border-radius:10px;height:52px;font-size:17px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0" style-hover="background:#BDE69A">Send request</button>
+          <sc-if value="{{ sendError }}" hint-placeholder-val="{{ false }}">
+            <p role="alert" style="grid-column:1/-1;margin:0;padding:14px 16px;border-radius:12px;background:rgba(255,138,128,0.1);border:1px solid rgba(255,138,128,0.4);color:#FFD2CC;font-size:15px;line-height:1.5">We couldn't send your request just now. Please try again, or <a href="{{ waLead }}" target="_blank" style="color:#FFE9E6;font-weight:600;text-decoration:underline">send it to us on WhatsApp</a> instead.</p>
+          </sc-if>
+          <button type="submit" style="grid-column:1/-1;background:#A6D57F;color:#10180B;border:0;border-radius:10px;height:52px;font-size:17px;font-weight:600;cursor:{{ sendCursor }};opacity:{{ sendOpacity }};white-space:nowrap;flex-shrink:0" style-hover="background:#BDE69A">{{ sendLabel }}</button>
         </form>
       </sc-if>
     </div>
@@ -591,7 +598,7 @@ select option{color:#151714}
 </x-dc>
 <script type="text/x-dc" data-dc-script="" data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],&quot;default&quot;:&quot;A&quot;,&quot;tsType&quot;:&quot;'A'|'B'|'C'&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
 class Component extends DCLogic {
-  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, scrolled: false, menuOpen: false, quoteOpen: false, reqType: 'POS devices & hardware', submitted: false };
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, scrolled: false, menuOpen: false, quoteOpen: false, reqType: 'POS devices & hardware', submitted: false, sending: false, sendError: false, waLead: '' };
   componentDidMount() {
     this.onResize = () => this.setState({ w: window.innerWidth });
     this.onScroll = () => { const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
@@ -602,6 +609,46 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this.onResize);
     window.removeEventListener('scroll', this.onScroll);
   }
+  // Quote requests are emailed via FormSubmit (formsubmit.co). The first
+  // submission sends an "Activate form" email to this inbox; nothing is
+  // delivered until that link is clicked.
+  quoteEndpoint = 'https://formsubmit.co/ajax/dynamocore25@gmail.com';
+  waNumber = '233506725726';
+
+  sendQuote(e) {
+    e.preventDefault();
+    const f = e.target;
+    if (f.website && f.website.value) return; // honeypot: bots fill hidden fields
+    if (this.state.sending) return;
+    const data = {};
+    for (const [k, v] of new FormData(f)) if (k !== 'website' && String(v).trim()) data[k] = String(v).trim();
+
+    // Same details, ready to send on WhatsApp (thank-you screen and error fallback).
+    const lines = ['Hi Dynamo Core, I just sent a request on your website.', ''];
+    for (const [k, v] of Object.entries(data)) lines.push((k === 'email' ? 'Email' : k) + ': ' + v);
+    const waLead = 'https://wa.me/' + this.waNumber + '?text=' + encodeURIComponent(lines.join('\n'));
+
+    this.setState({ sending: true, sendError: false, waLead });
+    fetch(this.quoteEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: 'New quote request: ' + (data['Request type'] || '') + ' · ' + (data.Company || data['Full name'] || ''),
+        _template: 'table',
+        _captcha: 'false',
+        ...data
+      })
+    })
+      .then((r) => r.json().catch(() => ({})).then((j) => {
+        if (!r.ok || String(j.success) !== 'true') throw new Error(j.message || 'HTTP ' + r.status);
+      }))
+      .then(() => this.setState({ sending: false, submitted: true }))
+      .catch((err) => {
+        console.warn('[quote] send failed:', err);
+        this.setState({ sending: false, sendError: true });
+      });
+  }
+
   renderVals() {
     const heads = {
       A: 'POS devices your business can count on.',
@@ -610,7 +657,7 @@ class Component extends DCLogic {
     };
     const isMobile = this.state.w < 1100;
     const wa = 'https://wa.me/233506725726?text=' + encodeURIComponent("Hi Dynamo Core, I'd like to find out more about your services.");
-    const open = (t) => this.setState({ quoteOpen: true, submitted: false, menuOpen: false, reqType: t });
+    const open = (t) => this.setState({ quoteOpen: true, submitted: false, sendError: false, menuOpen: false, reqType: t });
     return {
       headline: heads[this.props.headline ?? 'A'] || heads.A,
       isMobile, isDesktop: !isMobile,
@@ -674,7 +721,13 @@ class Component extends DCLogic {
       setReqType: (e) => this.setState({ reqType: e.target.value }),
       submitted: this.state.submitted,
       notSubmitted: !this.state.submitted,
-      submit: (e) => { e.preventDefault(); if (e.target.website && e.target.website.value) return; this.setState({ submitted: true }); }
+      submit: (e) => this.sendQuote(e),
+      sending: this.state.sending,
+      sendError: this.state.sendError,
+      waLead: this.state.waLead || wa,
+      sendLabel: this.state.sending ? 'Sending…' : 'Send request',
+      sendOpacity: this.state.sending ? '0.7' : '1',
+      sendCursor: this.state.sending ? 'progress' : 'pointer'
     };
   }
 }
