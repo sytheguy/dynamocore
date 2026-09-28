@@ -375,12 +375,12 @@ select option{color:#151714}
 
 <section data-screen-label="Trust strip" style="max-width:1240px;margin:0 auto;padding:0 20px;width:100%">
   <div style="border-top:1px solid rgba(185,224,143,0.14);border-bottom:1px solid rgba(185,224,143,0.14);padding:28px 0;display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px">
-    <span style="font-size:14px;color:#BAC3B2;font-weight:500">Trusted by banks and payment companies</span>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;flex:1">
-      <div style="height:64px;padding:0 20px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(185,224,143,0.14);display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);background:rgba(255,255,255,0.1);border-color:rgba(185,224,143,0.4);box-shadow:0 12px 28px rgba(0,0,0,0.35)"><img src="assets/img/d0c55fae.png" alt="Bank of Africa" style="height:32px;width:auto;display:block"></div>
-      <div style="height:64px;padding:0 20px;border-radius:12px;background:#FFFFFF;display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35),0 0 0 2px rgba(166,213,127,0.6)"><img src="assets/img/5884d475.png" alt="Hubtel" style="height:28px;width:auto;display:block"></div>
-      <div style="height:64px;padding:0 20px;border-radius:12px;background:#FFFFFF;display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35),0 0 0 2px rgba(166,213,127,0.6)"><img src="assets/img/ebe9da90.png" alt="National Investment Bank" style="height:40px;width:auto;display:block"></div>
-      <div style="height:64px;padding:0 20px;border-radius:12px;background:#FFFFFF;display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35),0 0 0 2px rgba(166,213,127,0.6)"><img src="assets/img/adb.webp" alt="Agricultural Development Bank (ADB)" style="height:40px;width:auto;display:block"></div>
+    <span style="font-size:14px;color:#BAC3B2;font-weight:500;flex:{{ trustLabelFlex }}">Trusted by banks and payment companies</span>
+    <div style="display:{{ trustDisplay }};grid-template-columns:repeat(2,minmax(0,1fr));flex-wrap:wrap;align-items:center;gap:12px;flex:{{ trustFlex }}">
+      <div style="height:{{ trustTileH }};padding:0 {{ trustTilePad }};border-radius:12px;justify-content:center;background:rgba(255,255,255,0.06);border:1px solid rgba(185,224,143,0.14);display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);background:rgba(255,255,255,0.1);border-color:rgba(185,224,143,0.4);box-shadow:0 12px 28px rgba(0,0,0,0.35)"><img src="assets/img/d0c55fae.png" alt="Bank of Africa" style="height:32px;width:auto;max-width:100%;object-fit:contain;display:block"></div>
+      <div style="height:{{ trustTileH }};padding:0 {{ trustTilePad }};border-radius:12px;justify-content:center;background:#FFFFFF;display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35),0 0 0 2px rgba(166,213,127,0.6)"><img src="assets/img/5884d475.png" alt="Hubtel" style="height:28px;width:auto;max-width:100%;object-fit:contain;display:block"></div>
+      <div style="height:{{ trustTileH }};padding:0 {{ trustTilePad }};border-radius:12px;justify-content:center;background:#FFFFFF;display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35),0 0 0 2px rgba(166,213,127,0.6)"><img src="assets/img/ebe9da90.png" alt="National Investment Bank" style="height:40px;width:auto;max-width:100%;object-fit:contain;display:block"></div>
+      <div style="height:{{ trustTileH }};padding:0 {{ trustTilePad }};border-radius:12px;justify-content:center;background:#FFFFFF;display:flex;align-items:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s,border-color .3s" style-hover="transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35),0 0 0 2px rgba(166,213,127,0.6)"><img src="assets/img/adb.webp" alt="Agricultural Development Bank (ADB)" style="height:40px;width:auto;max-width:100%;object-fit:contain;display:block"></div>
     </div>
   </div>
 </section>
@@ -708,6 +708,12 @@ class Component extends DCLogic {
       webTileMt: '0px',
       indCols: this.state.w >= 760 ? 'repeat(4,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))',
       btnFlex: this.state.w < 640 ? '1 1 auto' : '0 0 auto',
+      // Trust strip: phones get an even 2x2 logo grid instead of ragged wrapping rows.
+      trustDisplay: this.state.w < 640 ? 'grid' : 'flex',
+      trustFlex: this.state.w < 640 ? '1 1 100%' : '1',
+      trustLabelFlex: this.state.w < 640 ? '1 1 100%' : '0 1 auto',
+      trustTileH: this.state.w < 640 ? '72px' : '64px',
+      trustTilePad: this.state.w < 640 ? '12px' : '20px',
       statCols: this.state.w >= 900 ? 'repeat(4,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))',
       footCols: this.state.w >= 760 ? 'repeat(3,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))',
       footBrandSpan: this.state.w >= 760 ? 'auto' : '1 / -1',
