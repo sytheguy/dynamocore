@@ -527,7 +527,7 @@ select option{color:#151714}
       <span style="color:#DCE2D6">Adenta, Accra, Ghana</span>
     </div>
   </div>
-  <div style="max-width:1240px;margin:0 auto;padding:20px;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:#8F9A87">
+  <div style="max-width:1240px;margin:0 auto;padding:20px 20px {{ footBarPadBottom }};border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:#8F9A87">
     <span>© 2026 Dynamo Core</span>
     <div style="display:flex;gap:20px"><a href="/privacy" style="color:#BAC3B2">Privacy</a><a href="/terms" style="color:#BAC3B2">Terms</a></div>
   </div>
@@ -668,6 +668,9 @@ class Component extends DCLogic {
       headerH: isMobile || this.state.scrolled ? '64px' : '80px',
       bottomPad: '0px',
       fabBottom: isMobile ? 'calc(16px + env(safe-area-inset-bottom))' : '24px',
+      // Room under the footer's Privacy/Terms row so the floating WhatsApp button (56px, pinned
+      // bottom-right) never covers them. Wide screens don't overlap, so they keep the normal 20px.
+      footBarPadBottom: isMobile ? 'calc(88px + env(safe-area-inset-bottom))' : this.state.w < 1360 ? '96px' : '20px',
       menuOpen: isMobile && this.state.menuOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       closeMenu: () => this.setState({ menuOpen: false }),
