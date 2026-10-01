@@ -613,10 +613,11 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this.onResize);
     window.removeEventListener('scroll', this.onScroll);
   }
-  // Quote requests are emailed via FormSubmit (formsubmit.co) to the
-  // Dynamo Core inbox. The random string is FormSubmit's alias for that
-  // address, so the address itself isn't exposed in the page source.
-  quoteEndpoint = 'https://formsubmit.co/ajax/2ab40722807810510aed1a370c84e4cc';
+  // Quote requests are emailed via FormSubmit (formsubmit.co) to
+  // info@dynamocoregh.com (forwarded by ImprovMX). The first submission
+  // sends an "Activate form" email to that inbox; nothing is delivered
+  // until that link is clicked.
+  quoteEndpoint = 'https://formsubmit.co/ajax/info@dynamocoregh.com';
   waNumber = '233506725726';
 
   sendQuote(e) {
